@@ -23,10 +23,10 @@ const Login = () => {
     
     try {
       // Send login request to the backend
-      const response = await axios.post('https://fruitbackend-1ikc.onrender.com/api/login', {
-        email: formData.email,
-        password: formData.password
-      });
+      // const response = await axios.post('https://fruitbackend-1ikc.onrender.com/api/login', {
+      //   email: formData.email,
+      //   password: formData.password
+      // });
 
       // Check if the login was successful
       if (response.status === 200) {
