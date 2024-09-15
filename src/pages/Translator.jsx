@@ -57,7 +57,7 @@ const TranslatorPage = () => {
 
   const handleTranslate = async () => {
     try {
-      const response = await axios.post('http://127.0.0.1:5000/api/translate', {
+      const response = await axios.post('https://fruitbackend-1ikc.onrender.com/api/translate', {
         text: inputText,
         target_language: targetLanguage
       });
