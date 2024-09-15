@@ -19,7 +19,7 @@ function App() {
       <Router>
         
         <Routes>
-          <Route path="/login" element={<Login />} />
+          <Route path="/" element={<Login />} />
           <Route path="/home" element={<HomeP/>}/>
           <Route path="/translator" element={<Translator/>}/>
           <Route path="/about" element={<About/>}/>
