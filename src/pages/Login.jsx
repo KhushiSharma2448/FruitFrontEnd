@@ -22,12 +22,6 @@ const Login = () => {
     e.preventDefault();
     
     try {
-      // Send login request to the backend
-      // const response = await axios.post('https://fruitbackend-1ikc.onrender.com/api/login', {
-      //   email: formData.email,
-      //   password: formData.password
-      // });
-
       // Check if the login was successful
       if (response.status === 200) {
         console.log('Login successful');
