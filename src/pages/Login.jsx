@@ -1,25 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../styles/LoginPage.css"
-
+import "../styles/LoginPage.css";
 import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
-    username: '',
     email: '',
     password: '',
-    role: '',
-    tasks: [],
-    isActive: true,
-    created_at: new Date()
   });
-
-  const validatePassword = (password) => {
-    const re = /(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[^a-zA-Z0-9])(?!.*\s).{8,}/;
-    return re.test(password);
-  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,16 +18,26 @@ const Login = () => {
     });
   }
 
-  
-
   const signIn = async (e) => {
     e.preventDefault();
+    
     try {
-        console.log('Login successfully');
+      // Send login request to the backend
+      const response = await axios.post('https://fruitbackend-1ikc.onrender.com/api/login', {
+        email: formData.email,
+        password: formData.password
+      });
+
+      // Check if the login was successful
+      if (response.status === 200) {
+        console.log('Login successful');
+        // Navigate to home page or dashboard
         navigate('/home');
-        
-      
+      } else {
+        console.log('Login failed');
+      }
     } catch (err) {
+      console.error("Error during login", err);
       console.log("Wrong credentials");
     }
   };
@@ -50,9 +49,23 @@ const Login = () => {
           <div className="login">
             <form onSubmit={signIn}>
               <label htmlFor="chk" aria-hidden="true" className="label-login">Login</label>
-              <input type="email" name="email" placeholder="Email" className="inputform" required onChange={handleChange} />
-              <input type="password" name="password" placeholder="Password" className="inputform" required onChange={handleChange} />
-              <button className="sub-button" >Login</button>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="inputform"
+                required
+                onChange={handleChange}
+              />
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                className="inputform"
+                required
+                onChange={handleChange}
+              />
+              <button className="sub-button" type="submit">Login</button>
             </form>
           </div>
         </div>
