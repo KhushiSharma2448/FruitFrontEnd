@@ -1,0 +1,106 @@
+/* Main Container */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Changed to align sections at the top */
+    align-items: center;
+    padding: 40px 20px;
+    background-color: #f4f7f6;
+    min-height: 50vh; /* Ensure it takes full screen height */
+    color: #333;
+    box-sizing: border-box;
+  }
+  
+  /* Title Styling */
+  .about-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Description Paragraph */
+  .about-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 900px;
+    margin-bottom: 40px;
+    padding: 0 10px;
+  }
+  
+  /* Section Styling */
+  .about-section {
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 900px;
+    text-align: center;
+    padding: 0 10px;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #388E3C;
+    margin-bottom: 15px;
+  }
+  
+  .section-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    padding: 0 10px;
+  }
+  
+  /* Service List */
+  .services-list {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto; /* Center the list */
+  }
+  
+  .services-list li {
+    font-size: 1.1rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: #333;
+  }
+  
+  .services-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .services-list li strong {
+    color: #43A047;
+  }
+  
+  /* Footer Styling */
+  .about-footer {
+    margin-top: 50px;
+    font-size: 0.9rem;
+    color: #888;
+    text-align: center;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .about-title {
+      font-size: 2.2rem;
+    }
+  
+    .section-title {
+      font-size: 1.8rem;
+    }
+  
+    .about-description, .section-text, .services-list li {
+      font-size: 1rem;
+    }
+  
+    .about-container {
+      padding: 20px;
+    }
+  }
+  

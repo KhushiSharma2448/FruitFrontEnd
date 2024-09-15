@@ -1,0 +1,104 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  width: 400px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+}
+
+label {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.inputform, .selectform {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+.inputform:focus, .selectform:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.sub-button {
+  width: 100%;
+  padding: 15px;
+  background-color: #4CAF50;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.sub-button:hover {
+  background-color: #45a049;
+}
+
+.hidden {
+  display: none;
+}
+
+.signup, .login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.signup {
+  display: none;
+}
+
+#chk:checked ~ .signup {
+  display: flex;
+}
+
+#chk:checked ~ .login {
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 500px) {
+  .main {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .inputform, .selectform {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .sub-button {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  label {
+    font-size: 20px;
+  }
+}
