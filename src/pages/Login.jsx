@@ -23,7 +23,7 @@ const Login = () => {
     
     try {
       // Check if the login was successful
-      if (response.status === 200) {
+      if (response.status == 200) {
         console.log('Login successful');
         // Navigate to home page or dashboard
         navigate('/home');
