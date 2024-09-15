@@ -13,7 +13,7 @@ const FaqPage = () => {
 
   const fetchFaqs = async () => {
     try {
-      const response = await axios.get('http://127.0.0.1:5000/api/faqs');
+      const response = await axios.get('https://fruitbackend-1ikc.onrender.com/api/faqs');
       setFaqs(response.data);
     } catch (error) {
       console.error('Error fetching FAQs:', error);
@@ -28,7 +28,7 @@ const FaqPage = () => {
   const handleAddFaq = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://127.0.0.1:5000/api/faqs', formData);
+      await axios.post('https://fruitbackend-1ikc.onrender.com/api/faqs', formData);
       setFormData({ question: '', answer: '' });
       fetchFaqs();
     } catch (error) {
@@ -44,7 +44,7 @@ const FaqPage = () => {
   const handleUpdateFaq = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://127.0.0.1:5000/api/faqs/${editingFaq}`, formData);
+      await axios.put(`https://fruitbackend-1ikc.onrender.com/faqs/${editingFaq}`, formData);
       setFormData({ question: '', answer: '' });
       setEditingFaq(null);
       fetchFaqs();
@@ -55,7 +55,7 @@ const FaqPage = () => {
 
   const handleDeleteFaq = async (id) => {
     try {
-      await axios.delete(`http://127.0.0.1:5000/api/faqs/${id}`);
+      await axios.delete(`https://fruitbackend-1ikc.onrender.com/api/faqs/${id}`);
       fetchFaqs();
     } catch (error) {
       console.error('Error deleting FAQ:', error);
