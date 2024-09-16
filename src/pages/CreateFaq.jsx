@@ -63,7 +63,7 @@ const FaqPage = () => {
   };
 
   return (
-    <div className="faq-page-container" style="padding-top:40px">
+    <div className="faq-page-container">
       <h1>FAQ Page</h1>
       <form onSubmit={editingFaq ? handleUpdateFaq : handleAddFaq} className="faq-form">
         <input
