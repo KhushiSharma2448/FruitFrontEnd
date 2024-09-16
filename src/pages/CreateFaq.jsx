@@ -44,7 +44,7 @@ const FaqPage = () => {
   const handleUpdateFaq = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`https://fruitbackend-1ikc.onrender.com/faqs/${editingFaq}`, formData);
+      await axios.put(`https://fruitbackend-1ikc.onrender.com/api/faqs/${editingFaq}`, formData);
       setFormData({ question: '', answer: '' });
       setEditingFaq(null);
       fetchFaqs();
